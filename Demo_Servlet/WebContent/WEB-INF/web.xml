@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+	<display-name>Demo_Servlet</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--ex01:测试servlet生命周期 -->
+	<servlet>
+		<servlet-name>ex01_Servlet1</servlet-name>
+		<servlet-class>ex01_LifeCycle.TestServlet1</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ex01_Servlet1</servlet-name>
+		<url-pattern>/ex01/Test01</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ex01_Servlet2</servlet-name>
+		<servlet-class>ex01_LifeCycle.TestServlet2</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ex01_Servlet2</servlet-name>
+		<url-pattern>/ex01/Test02</url-pattern>
+	</servlet-mapping>
+
+	<!--ex02: 测试获取表单数据 -->
+	<servlet>
+		<servlet-name>ex02_RegServlet</servlet-name>
+		<servlet-class>ex02_GetForm.servlet.RegServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ex02_RegServlet</servlet-name>
+		<url-pattern>/ex02/RegServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<!--ex03:测试路径跳转 -->
+	<servlet>
+		<servlet-name>ex03_HelloServlet</servlet-name>
+		<servlet-class>ex03_path.HelloServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ex03_TestServlet</servlet-name>
+		<servlet-class>ex03_path.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ex03_HelloServlet</servlet-name>
+		<!-- url-pattern处必须以/开头，这里的/表示项目的根目录 -->
+		<url-pattern>/ex003/HelloServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ex03_TestServlet</servlet-name>
+		<url-pattern>/ex003/TestServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<!--ex04:购物车案例 -->
+	<servlet>
+		<servlet-name>CartServlet</servlet-name>
+		<servlet-class>ex04_mvc.servlet.CartServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CartServlet</servlet-name>
+		<url-pattern>/ex04/CartServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
