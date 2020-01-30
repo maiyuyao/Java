@@ -69,4 +69,95 @@
 		<url-pattern>/ex04/CartServlet</url-pattern>
 	</servlet-mapping>
 
+	<!--ex05: filter -->
+	<!-- Filter #1 -->
+	<filter>
+		<filter-name>FirstFilter</filter-name>
+		<filter-class>ex05_FilterChain.FirstFilter</filter-class>
+	</filter>
+
+	<!--过滤器链：一个url匹配多个filter -->
+	<filter-mapping>
+		<filter-name>FirstFilter</filter-name>
+		<url-pattern>/ex05/index.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<!-- 多个url也可以共用一个filter -->
+	<filter-mapping>
+		<filter-name>FirstFilter</filter-name>
+		<url-pattern>/ex05/main.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<!-- Filter #2 -->
+	<filter>
+		<filter-name>SecondFilter</filter-name>
+		<filter-class>ex05_FilterChain.SecondFilter</filter-class>
+	</filter>
+	<!--过滤器链：一个url匹配多个filter -->
+	<filter-mapping>
+		<filter-name>SecondFilter</filter-name>
+		<url-pattern>/ex05/index.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+
+	<!-- 不同类型的Filter -->
+	<filter>
+		<filter-name>ErrorFilter</filter-name>
+		<filter-class>ex05_FilterChain.ErrorFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ErrorFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ex05/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ex05/error500.jsp</location>
+	</error-page>
+
+	<!--ex06: Asyn filter -->
+	<servlet>
+		<servlet-name>AsynServlet</servlet-name>
+		<servlet-class>ex06_FilterAsyn.AsynServlet</servlet-class>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AsynServlet</servlet-name>
+		<url-pattern>/ex06/AsynServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<!--ex07: Login demo -->
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>ex07_FilterForLogin.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/ex07/LoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>ex07_FilterForLogin.LoginFilter</filter-class>
+		<init-param>
+			<param-name>noLoginPaths</param-name>
+			<param-value>login.jsp;fail.jsp;LoginServlet</param-value>
+		</init-param>
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

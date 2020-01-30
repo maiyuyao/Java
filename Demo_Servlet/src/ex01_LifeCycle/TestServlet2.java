@@ -12,17 +12,17 @@ public class TestServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public TestServlet2() {
-		System.out.println("TestServlet2构造方法被执行....");
+		System.out.println("ex01: TestServlet2--构造方法被执行....");
 	}
 
 	public void destroy() {
-		System.out.println("TestServlet2销毁方法被执行....");
+		System.out.println("ex01: TestServlet2--destroy()被执行....");
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("TestServlet2的doGet()方法被执行...");
+		System.out.println("ex01: TestServlet2--doGet() 被执行...");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
@@ -39,12 +39,12 @@ public class TestServlet2 extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("TestServlet2的doPost()方法被执行...");
+		System.out.println("ex01: TestServlet2--doPost() 被执行...");
 		doGet(request, response); // 让doPost()执行与doGet()相同的操作
 	}
 
 	public void init() throws ServletException {
-		System.out.println("TestServlet2的初始化方法被执行....");
+		System.out.println("ex01: TestServlet2--init() 被执行....");
 	}
 
 }
