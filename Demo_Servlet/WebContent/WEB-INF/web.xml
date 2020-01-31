@@ -142,13 +142,13 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/ex07/LoginServlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<filter>
 		<filter-name>LoginFilter</filter-name>
 		<filter-class>ex07_FilterForLogin.LoginFilter</filter-class>
 		<init-param>
 			<param-name>noLoginPaths</param-name>
-			<param-value>login.jsp;fail.jsp;LoginServlet</param-value>
+			<param-value>login.jsp;fail.jsp;LoginServlet;ex</param-value>
 		</init-param>
 		<init-param>
 			<param-name>charset</param-name>
@@ -159,5 +159,32 @@
 		<filter-name>LoginFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
+	<!--ex08: listener base -->
+	<context-param>
+		<param-name>initParam</param-name>
+		<param-value>ex08_listener</param-value>
+	</context-param>
+	<listener>
+		<listener-class>ex08_ListenerBase.MyHttpSessionAttributeListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>ex08_ListenerBase.MyHttpSessionListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>ex08_ListenerBase.MyServletContextAttributeListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>ex08_ListenerBase.MyServletContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>ex08_ListenerBase.MyServletRequestAttributeListener</listener-class>
+	</listener>
+		<listener>
+		<listener-class>ex08_ListenerBase.MyServletRequestListener</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>0</session-timeout>
+	</session-config>
 
 </web-app>
