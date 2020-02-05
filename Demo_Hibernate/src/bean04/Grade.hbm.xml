@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-3 14:41:25 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="bean04.Grade" table="GRADE01">
+		<id name="gid" type="int">
+			<column name="GID" />
+			<generator class="native" />
+		</id>
+		<property name="gname" type="java.lang.String">
+			<column name="GNAME" />
+		</property>
+		<property name="gdesc" type="java.lang.String">
+			<column name="GDESC" />
+		</property>
+		<!--配置单向的一对多关系，inverse="false" lazy="true" inverse:标识关联中被动的一方，lazy:是否延时加载 -->
+		<set name="students" table="STUDENT01">
+			<key>
+				<column name="GID" />
+			</key>
+			<one-to-many class="bean04.Student" />
+		</set>
+	</class>
+</hibernate-mapping>

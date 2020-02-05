@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-3 19:46:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean06.Student" table="STUDENT06">
+        <id name="sid" type="int">
+            <column name="SID" />
+            <generator class="native" />
+        </id>
+        <property name="sname" type="java.lang.String">
+            <column name="SNAME" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <many-to-one name="grade" class="bean06.Grade">
+            <column name="GID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

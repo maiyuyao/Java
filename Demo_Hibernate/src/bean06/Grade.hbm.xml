@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bean06.Grade" table="GRADE06">
+		<id name="gid" type="int">
+			<column name="GID" />
+			<generator class="native" />
+		</id>
+		<property name="gname" type="java.lang.String">
+			<column name="GNAME" />
+		</property>
+		<property name="gdesc" type="java.lang.String">
+			<column name="GDESC" />
+		</property>
+		<!--配置单向的一对多关系，
+		 inverse: 标识关联中被动的一方,设置为true则让对方来维护数据;
+		 lazy:是否延时加载;
+		 cascade:表示由设定值的一方进行关联关系的维护 -->
+		<set name="students" table="STUDENT06" inverse="true" cascade='all'  lazy="true" >
+			<key>
+				<column name="GID" />
+			</key>
+			<one-to-many class="bean06.Student" />
+		</set>
+	</class>
+</hibernate-mapping>

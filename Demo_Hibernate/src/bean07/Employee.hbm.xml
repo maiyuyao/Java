@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-3 21:35:05 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="bean07.Employee" table="EMPLOYEE">
+    <cache usage="read-only"/>
+		<id name="empid" type="int">
+			<column name="EMPID" />
+			<generator class="assigned" />
+		</id>
+		<property name="empname" type="java.lang.String">
+			<column name="EMPNAME" />
+		</property>
+		<!-- 配置多对多关联关系 inverse="true"表示关联关系的控制由对方进行 -->
+		<set name="projects" table="PROEMP" inverse="true" >
+			<key column="REMPID"></key>
+			<many-to-many class="bean07.Project" column="RPROID"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

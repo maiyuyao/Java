@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:xe</property>
+		<property name="hibernate.connection.username">DEMO</property>
+		<property name="hibernate.connection.password">DEMO</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+		<property name="show_sql">true</property> <!--sql输出到控制台 -->
+		<property name="format_sql">true</property> <!--格式化输出到控制台的sql -->
+		<property name="hbm2ddl.auto">update</property> <!--自动创建create|更新update|验证数据库表结构 -->
+		<property name="hibernate.current_session_context_class">thread</property> <!-- getCurrentSession必须配置 -->
+
+        <!-- 开启二级缓存 -->
+        <property name="cache.use_second_level_cache">true</property>
+        <property name="cache.use_query_cache">true</property>
+	    <!-- 指定二级缓存的外部实现类 -->
+	     <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.internal.SingletonEhcacheRegionFactory</property>
+
+        <!-- xml文件 -->
+<!-- 	<mapping resource="bean01/Student.hbm.xml" /> 
+		<mapping resource="bean01/Student_comp.hbm.xml" /> -->
+		
+<!-- 	<mapping resource="bean04/Grade.hbm.xml" />
+		<mapping resource="bean04/Student.hbm.xml" /> -->
+		
+<!-- 	<mapping resource="bean05/Grade.hbm.xml" />
+		<mapping resource="bean05/Student.hbm.xml" /> -->
+		
+<!-- 	<mapping resource="bean06/Grade.hbm.xml" />
+		<mapping resource="bean06/Student.hbm.xml" /> -->
+		
+<!--    <mapping resource="bean07/Employee.hbm.xml" />
+		<mapping resource="bean07/Project.hbm.xml" /> -->
+		
+<!--    <mapping resource="bean09/Commodity.hbm.xml" />
+		<mapping resource="bean09/Customer.hbm.xml" />
+		<mapping resource="bean09/Order.hbm.xml" />
+		<mapping resource="bean09/OrderItem.hbm.xml" />
+		<mapping resource="bean09/Seller.hbm.xml" />-->
+
+        <!-- 注解 -->	
+<!--	<mapping class="bean10.t01_class.Students01"/>-->
+
+<!--    <mapping class="bean10.t02_filed.Students02"/> -->
+
+<!--    <mapping class="bean10.t03_Embedded.Students03"/>-->
+
+<!--    <mapping class="bean10.t04_one2one.IdCard"/>
+	    <mapping class="bean10.t04_one2one.Students04"/>-->
+	    
+<!--	<mapping class="bean10.t05_one2one_bfk.IdCard05"/>
+  	    <mapping class="bean10.t05_one2one_bfk.Students05"/>-->
+  	    
+<!--	<mapping class="bean10.t06_many2One.ClassRoom06"/>
+		<mapping class="bean10.t06_many2One.Students06"/>-->
+		
+<!--	<mapping class="bean10.t07_one2Many.ClassRoom07"/>
+		<mapping class="bean10.t07_one2Many.Students07"/>-->
+		
+<!--	<mapping class="bean10.t08_one2Many_bfk.ClassRoom08"/>
+		<mapping class="bean10.t08_one2Many_bfk.Students08"/>-->
+		
+<!--    <mapping class="bean10.t09_many2Many.Students09"/>
+		<mapping class="bean10.t09_many2Many.Teacher09"/> -->
+		
+ 	    <mapping class="bean10.t10_many2Many_bfk.Students10"/>
+		<mapping class="bean10.t10_many2Many_bfk.Teacher10"/>
+	</session-factory>
+	
+</hibernate-configuration>

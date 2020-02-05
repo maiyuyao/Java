@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-3 21:35:05 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="bean07.Project" table="PROJECT">
+		<id name="proid" type="int">
+			<column name="PROID" />
+			<generator class="assigned" />
+		</id>
+		<property name="proname" type="java.lang.String">
+			<column name="PRONAME" />
+		</property>
+		<!-- 配置多对多关联关系 cascade="all"表示级联的关联操作有project来进行 -->
+		<set name="employees" table="PROEMP" cascade="all" >
+			<key>
+				<column name="RPROID" />
+			</key>
+			<many-to-many class="bean07.Employee" column="REMPID"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

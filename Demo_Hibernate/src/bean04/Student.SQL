@@ -1,0 +1,17 @@
+CREATE TABLE GRADE01 (
+  GID Number(11) ,
+  GNAME varchar2(255) ,
+  GDESC varchar2(255) ,
+  PRIMARY KEY (GID)
+) ;
+
+CREATE TABLE STUDENT01 (
+  SID Number(11) ,
+  SNAME varchar(255) ,
+  SEX varchar(255) ,
+  GID Number(11)  ,
+  PRIMARY KEY (SID)
+)  
+
+--自定义外键
+ALTER TABLE STUDENT01 ADD CONSTRAINT FK_GID FOREIGN KEY (GID) REFERENCES GRADE01 (GID);

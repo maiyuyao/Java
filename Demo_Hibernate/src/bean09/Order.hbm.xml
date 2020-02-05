@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-2-4 14:47:00 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean09.Order" table="ORDERFORM">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="customer" class="bean09.Customer" fetch="join">
+            <column name="CUSTOMER" />
+        </many-to-one>
+        <property name="tradeDate" type="java.util.Date">
+            <column name="TRADEDATE" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="AMOUNT" />
+        </property>
+        <set name="orderItems" inverse="true"  cascade="all" lazy="false">
+            <key>
+                <column name="ORDERID" />
+            </key>
+            <one-to-many class="bean09.OrderItem" />
+        </set>
+    </class>
+</hibernate-mapping>
