@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>trans_ODS2DW_material_document</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;sapETL&#x2f;ODSToDW&#x2f;&#x6210;&#x672c;&#x7ba1;&#x7406;</directory>
+    <parameters>
+        <parameter>
+            <name>MAXDATE_MATDOC</name>
+            <default_value/>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2018&#x2f;11&#x2f;05 09&#x3a;37&#x3a;36.000</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2018&#x2f;12&#x2f;10 10&#x3a;01&#x3a;58.000</modified_date>
+    <key_for_session_key/>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>&#x2f;&#x2a;&#x6b64;&#x4e3a;&#x6bcf;&#x5929;&#x62bd;&#x53d6;&#x2a;&#x2f;&#xd;&#xa;1.&#x9996;&#x6b21;&#x91c7;&#x7528;&#x5168;&#x91cf;&#x62bd;&#x53d6;&#xd;&#xa;2.&#x4e4b;&#x540e;&#x91c7;&#x7528;&#x589e;&#x91cf;&#x3a; &#x53d6;cpudt&#x28;&#x5373;creation_date&#x29;&#x6700;&#x5927;&#x65f6;&#x95f4;-&#x3e;&#x7528;creation_date&#x5220;&#x9664;&#x6700;&#x540e;&#x4e00;&#x5929;&#x8bb0;&#x5f55;&#x3e;&#x7528;cpudt&#x4ece;&#x5220;&#x9664;&#x7684;&#x90a3;&#x5929;&#x5f00;&#x59cb;&#x53d6;&#xd;&#xa;&#xd;&#xa;&#x4f18;&#x5316;&#x7ecf;&#x9a8c;&#x3a;&#xd;&#xa;&#x28;1&#x29;&#x8fd0;&#x884c;&#x80cc;&#x666f;&#x3a; sapods.mseg&#x28;840w&#x29;, sapods.mkpf &#x28;100w&#x29;&#xd;&#xa;&#x28;2&#x29;kettle&#x662f;&#x591a;&#x7ebf;&#x7a0b;&#xff0c;&#x6bcf;&#x4e2a;step&#x5e76;&#x884c;&#xff0c;&#x5bf9;&#x6bcf;&#x4e00;&#x884c;&#x6570;&#x636e;&#x8fdb;&#x884c;&#x5904;&#x7406;&#xff0c;&#x5e94;&#x8be5;&#x9002;&#x5f53;&#x51cf;&#x5c11;step&#x7684;&#x6570;&#x91cf;&#x3002;&#xd;&#xa;&#x28;3&#x29;SQL&#x8c03;&#x4f18;1&#xff1a;&#x5168;&#x91cf;&#x65f6;&#xff0c;ODS&#x4e0e;DW&#x540c;&#x5728;greenplum&#x6570;&#x636e;&#x5e93;&#xff0c;&#x7528;INSERT INTO &#x28;SELECT...&#x29;&#xd;&#xa;&#x28;4&#x29;SQL&#x8c03;&#x4f18;1&#xff1a;&#x589e;&#x91cf;&#x65f6;&#xff0c;mseg&#x6570;&#x636e;&#x91cf;&#x5927;&#xff0c;&#x6ca1;&#x6709;&#x7d22;&#x5f15;&#x65f6;&#xff0c;exists mkpf&#x65f6;&#x95f4;&#x5f88;&#x957f;&#x28;&#x5148;&#x6267;&#x884c;&#x5916;&#x8868;&#x29;&#xff0c; in mkpf&#x53ea;&#x9700;5&#x79d2;&#x28;&#x5148;&#x6267;&#x884c;&#x5185;&#x8868;&#x29;&#xd;&#xa;&#x28;5&#x29;SQL&#x8c03;&#x4f18;2&#xff1a;&#x589e;&#x91cf;&#x65f6;&#xff0c;&#x5bf9;mkpf &#x7684;&#x66f4;&#x65b0;&#x65f6;&#x95f4;cpudt&#x505a;&#x7d22;&#x5f15;&#xff0c;&#x589e;&#x91cf;&#x67e5;&#x8be2;&#x65f6;&#xff0c;&#x5c31;&#x7b97;exists mkpf&#x4e5f;&#x6781;&#x5feb;&#xff0c;&#x53ea;&#x9700;1&#x79d2;&#x3002;&#xd;&#xa;&#x28;6&#x29;KETTLE&#x8c03;&#x4f18;1&#xff1a;&#x22;&#x6d41;&#x67e5;&#x8be2;&#x22;&#x6bd4;&#x22;LEFT JOIN&#x22;&#x8981;&#x6162;&#xff0c;A&#x8868;&#x6bcf;&#x6761;&#x6570;&#x636e;&#x8981;&#x904d;&#x5386;B&#x8868;&#xff0c;&#x4f46;&#x22;&#x6d41;&#x67e5;&#x8be2;&#x22;&#x4e0d;&#x7528;&#x4e8b;&#x5148;&#x6392;&#x5e8f;&#x3002;&#x22;LEFT JOIN&#x22;&#x4e8b;&#x5148;&#x6392;&#x5e8f;&#xff0c;&#x9010;&#x6761;&#x5f80;&#x4e0b;&#x6bd4;&#x5bf9;&#xff0c;&#x8fd0;&#x7b97;&#x91cf;&#x5c11;&#x3002;&#xd;&#xa;&#x28;7&#x29;KETTLE&#x8c03;&#x4f18;2&#xff1a;t006a&#x28;838&#x29;, tcurt&#x28;621&#x29;&#xff0c;&#x6570;&#x636e;&#x8f83;&#x5c11;&#xff0c;&#x7528;LEFT JOIN&#x8981;&#x5bf9;&#x5927;&#x8868;&#x591a;&#x8fdb;&#x884c;2&#x6b21;&#x6392;&#x5e8f;&#xff0c;&#x6392;&#x5e8f;&#x82b1;&#x7684;&#x65f6;&#x95f4;&#x591a;&#xff0c;&#x6240;&#x4ee5;&#x4f7f;&#x7528;&#x22;&#x6d41;&#x67e5;&#x8be2;&#x22;&#x3002;&#xd;&#xa;&#x28;8&#x29;KETTLE&#x8c03;&#x4f18;3&#xff1a;&#x5c3d;&#x91cf;&#x4e0d;&#x7528;&#x22;&#x66f4;&#x65b0;&#x2f;&#x63d2;&#x5165;&#x22;&#x28;1&#x6761;&#x2f;&#x79d2;&#x29;&#xff0c;&#x22;&#x8868;&#x8f93;&#x51fa;&#x22;&#x28;500&#x6761;&#x2f;&#x79d2;&#x29;&#xff0c;&#x56e0;&#x6b64;&#x91c7;&#x7528;&#x5148;&#x5220;&#x9664;&#xff0c;&#x518d;&#x22;&#x8868;&#x8f93;&#x51fa;&#x22;&#x7684;&#x65b9;&#x5f0f;&#x3002;&#xd;&#xa;</note>
+      <xloc>96</xloc>
+      <yloc>240</yloc>
+      <width>1028</width>
+      <heigth>290</heigth>
+      <fontname>&#x5fae;&#x8f6f;&#x96c5;&#x9ed1;</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</name>
+    <server>192.168.252.21</server>
+    <type>GREENPLUM</type>
+    <access>Native</access>
+    <database>saprpt</database>
+    <port>2345</port>
+    <username>gpadmin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb1ebe71da9fa6d4</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>2345</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>sapods.t006a</from><to>Look up msehl</to><enabled>Y</enabled> </hop>
+  <hop> <from>Look up msehl</from><to>Look up ltext</to><enabled>Y</enabled> </hop>
+  <hop> <from>sapods.tcurt</from><to>Look up ltext</to><enabled>Y</enabled> </hop>
+  <hop> <from>sapods.mseg</from><to>INNER</to><enabled>Y</enabled> </hop>
+  <hop> <from>sapods.mkpf</from><to>INNER</to><enabled>Y</enabled> </hop>
+  <hop> <from>INNER</from><to>Look up msehl</to><enabled>Y</enabled> </hop>
+  <hop> <from>Look up ltext</from><to>sapdw.material_document</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>INNER</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>sapods.mseg</step1>
+<step2>sapods.mkpf</step2>
+    <keys_1>
+      <key>mblnr</key>
+      <key>mjahr</key>
+    </keys_1>
+    <keys_2>
+      <key>mblnr</key>
+      <key>mjahr</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Look up ltext</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>sapods.tcurt</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>waers</name>
+        <field>waers</field>
+      </key>
+      <value>
+        <name>ltext</name>
+        <rename>currency_description</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>654</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Look up msehl</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <from>sapods.t006a</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>meins</name>
+        <field>msehi</field>
+      </key>
+      <value>
+        <name>msehl</name>
+        <rename>unit_description</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>471</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sapdw.material_document</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</connection>
+    <schema>sapdw</schema>
+    <table>material_document</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>material_document_no</column_name>
+          <stream_name>mblnr</stream_name>
+        </field>
+        <field>
+          <column_name>material_document_item_no</column_name>
+          <stream_name>zeile</stream_name>
+        </field>
+        <field>
+          <column_name>material_document_year</column_name>
+          <stream_name>mjahr</stream_name>
+        </field>
+        <field>
+          <column_name>material_code</column_name>
+          <stream_name>matnr</stream_name>
+        </field>
+        <field>
+          <column_name>posting_date</column_name>
+          <stream_name>budat</stream_name>
+        </field>
+        <field>
+          <column_name>order_no</column_name>
+          <stream_name>aufnr</stream_name>
+        </field>
+        <field>
+          <column_name>mark</column_name>
+          <stream_name>shkzg</stream_name>
+        </field>
+        <field>
+          <column_name>quantity</column_name>
+          <stream_name>menge</stream_name>
+        </field>
+        <field>
+          <column_name>unit_description</column_name>
+          <stream_name>unit_description</stream_name>
+        </field>
+        <field>
+          <column_name>issued_manufacture</column_name>
+          <stream_name>werks</stream_name>
+        </field>
+        <field>
+          <column_name>issued_warehouse</column_name>
+          <stream_name>lgort</stream_name>
+        </field>
+        <field>
+          <column_name>received_manufacture</column_name>
+          <stream_name>umwrk</stream_name>
+        </field>
+        <field>
+          <column_name>received_warehouse</column_name>
+          <stream_name>umlgo</stream_name>
+        </field>
+        <field>
+          <column_name>received_material_code</column_name>
+          <stream_name>ummat</stream_name>
+        </field>
+        <field>
+          <column_name>wbs_no_internal</column_name>
+          <stream_name>mat_pspnr</stream_name>
+        </field>
+        <field>
+          <column_name>movement_type</column_name>
+          <stream_name>bwart</stream_name>
+        </field>
+        <field>
+          <column_name>special_stock_mark</column_name>
+          <stream_name>sobkz</stream_name>
+        </field>
+        <field>
+          <column_name>supplier_code</column_name>
+          <stream_name>lifnr</stream_name>
+        </field>
+        <field>
+          <column_name>currency_description</column_name>
+          <stream_name>currency_description</stream_name>
+        </field>
+        <field>
+          <column_name>modified_date</column_name>
+          <stream_name>ed_aedat</stream_name>
+        </field>
+        <field>
+          <column_name>purchase_order_no</column_name>
+          <stream_name>ebeln</stream_name>
+        </field>
+        <field>
+          <column_name>purchase_order_item_no</column_name>
+          <stream_name>ebelp</stream_name>
+        </field>
+        <field>
+          <column_name>items_text</column_name>
+          <stream_name>sgtxt</stream_name>
+        </field>
+        <field>
+          <column_name>customer_no</column_name>
+          <stream_name>kunnr</stream_name>
+        </field>
+        <field>
+          <column_name>sales_order_no</column_name>
+          <stream_name>kdauf</stream_name>
+        </field>
+        <field>
+          <column_name>sales_order_item_no</column_name>
+          <stream_name>kdpos</stream_name>
+        </field>
+        <field>
+          <column_name>amount_in_local_currency</column_name>
+          <stream_name>dmbtr</stream_name>
+        </field>
+        <field>
+          <column_name>creation_date</column_name>
+          <stream_name>cpudt</stream_name>
+        </field>
+        <field>
+          <column_name>network_no</column_name>
+          <stream_name>nplnr</stream_name>
+        </field>
+        <field>
+          <column_name>activity_detail_id</column_name>
+          <stream_name>vornr</stream_name>
+        </field>
+        <field>
+          <column_name>amount</column_name>
+          <stream_name>bualt</stream_name>
+        </field>
+        <field>
+          <column_name>header_text</column_name>
+          <stream_name>bktxt</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>864</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sapods.mkpf</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</connection>
+    <sql>SELECT&#xd;&#xa;	mandt,&#xd;&#xa;	mblnr,&#xd;&#xa;	mjahr,&#xd;&#xa;	to_date&#x28;budat,&#x27;YYYYMMDD&#x27;&#x29; AS budat,&#xd;&#xa;    to_date&#x28;cpudt,&#x27;YYYYMMDD&#x27;&#x29; AS cpudt,&#xd;&#xa;&#x2f;&#x2a;&#x589e;&#x52a0;&#x7269;&#x6599;&#x51ed;&#x8bc1;&#x62ac;&#x5934;&#x6587;&#x672c;&#x2a;&#x2f;&#xd;&#xa;	bktxt&#xd;&#xa;FROM&#xd;&#xa;	sapods.mkpf&#xd;&#xa;WHERE&#xd;&#xa;	cpudt &#x3e;&#x3d; &#x27;&#x24;&#x7b;MAXDATE_MATDOC&#x7d;&#x27;&#xd;&#xa;ORDER BY &#xd;&#xa;	mjahr,&#xd;&#xa;	mblnr&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sapods.mseg</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</connection>
+    <sql>SELECT&#xd;&#xa;  a.mandt,&#xd;&#xa;  a.mblnr,&#xd;&#xa;  a.zeile,&#xd;&#xa;  a.mjahr, &#xd;&#xa;  a.matnr,&#xd;&#xa;  a.aufnr,&#xd;&#xa;  a.shkzg,&#xd;&#xa;  a.menge,&#xd;&#xa;  a.werks,&#xd;&#xa;  a.lgort,&#xd;&#xa;  a.umwrk,&#xd;&#xa;  a.umlgo,&#xd;&#xa;  a.ummat,&#xd;&#xa;  to_number&#x28;mat_pspnr, &#x27;00000000&#x27;&#x29; AS mat_pspnr,&#xd;&#xa;  a.bwart,&#xd;&#xa;  a.sobkz,&#xd;&#xa;  a.lifnr,&#xd;&#xa; &#x28;CASE ed_aedat WHEN &#x27;00000000&#x27; THEN NULL ELSE to_date&#x28;ed_aedat, &#x27;yyyymmdd&#x27;&#x29; END&#x29;AS ed_aedat,&#xd;&#xa;  a.ebeln,&#xd;&#xa;  a.ebelp,&#xd;&#xa;  a.sgtxt,&#xd;&#xa;  a.kunnr,&#xd;&#xa;  a.kdauf,&#xd;&#xa;  a.kdpos,&#xd;&#xa;  a.dmbtr,&#xd;&#xa;  a.meins,&#xd;&#xa;  a.waers,&#xd;&#xa;  a.nplnr,&#xd;&#xa;  f.vornr,&#xd;&#xa;  a.bualt&#xd;&#xa;FROM&#xd;&#xa;  sapods.mseg a&#xd;&#xa;&#x2f;&#x2a;&#x83b7;&#x53d6;&#x7f51;&#x7edc;&#x4f5c;&#x4e1a;&#x7684;&#x6d3b;&#x52a8;&#x53f7;&#x2a;&#x2f;&#xd;&#xa;left join &#xd;&#xa;  sapods.afvc f on a.mandt&#x3d;f.mandt and a.aufpl&#x3d;f.aufpl and a.aplzl&#x3d;f.aplzl and f.aufpl is not null&#xd;&#xa;WHERE&#xd;&#xa;  &#x28;mblnr,mjahr&#x29; IN &#x28;  &#xd;&#xa;    SELECT mblnr,mjahr FROM sapods.mkpf &#xd;&#xa;    WHERE cpudt &#x3e;&#x3d; &#x27;&#x24;&#x7b;MAXDATE_MATDOC&#x7d;&#x27; &#xd;&#xa;  &#x29;&#xd;&#xa;ORDER BY &#xd;&#xa;	mjahr,&#xd;&#xa;	mblnr,&#xd;&#xa;	zeile</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>112</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sapods.t006a</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</connection>
+    <sql>SELECT&#xd;&#xa;	msehl,&#xd;&#xa;	mandt,&#xd;&#xa;	msehi&#xd;&#xa;FROM&#xd;&#xa;	sapods.t006a&#xd;&#xa;WHERE&#xd;&#xa;    spras &#x3d; &#x27;1&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>471</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sapods.tcurt</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>192.168.252.21-&#x6b63;&#x5f0f;ODS&#x26;DW</connection>
+    <sql>SELECT&#xd;&#xa;	ltext,&#xd;&#xa;	mandt,&#xd;&#xa;	waers&#xd;&#xa;FROM&#xd;&#xa;	sapods.tcurt&#xd;&#xa;WHERE&#xd;&#xa;    spras &#x3d; &#x27;1&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>654</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

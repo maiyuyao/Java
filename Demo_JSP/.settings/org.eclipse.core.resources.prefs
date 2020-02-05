@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/com/dao/UsersDAO.java=UTF-8
+encoding//src/viewListDemo/dao/ItemsDAO.java=GB2312
+encoding//src/viewListDemo/entity/Items.java=GB2312
+encoding//src/viewListDemo/util/DBHelper.java=GB2312

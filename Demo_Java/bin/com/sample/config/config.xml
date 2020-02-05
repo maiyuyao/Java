@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<config>
+<dbConf> 
+	<host>10.41.21.42</host> 
+	<port>1521</port> 
+	<sid>RF</sid> 
+	<user>gsdctrain</user>
+	<password>gsdctrain</password>
+</dbConf>
+<MailConf> 
+	<host>wzsmail.wistron.com</host> 
+	<user>Randy_Mai@wistron.com</user>
+	<password>MMyy444$$$</password> 
+	<addrs> 
+		<addr>Randy_Mai@wistron.com</addr> 
+		<addr>liyo_Xing@wistronits.com</addr> 
+	</addrs> 	
+</MailConf>
+</config>
