@@ -16,11 +16,18 @@ import javax.persistence.Table;
 @Table(name = "Ann10_Students")
 public class Students10 {
 
+	@Id
+	@GeneratedValue
 	private int sid;
 	private String sname;
 	private String gender;
 	private Date birthday;
 	private String major;
+	
+	@ManyToMany
+	@JoinTable(name = "ANN10_TEACH_STU", 
+	joinColumns = {@JoinColumn(name = "sid") }, 
+	inverseJoinColumns = { @JoinColumn(name = "tid") })
 	private Set<Teacher10> teach = new HashSet<Teacher10>();
 
 	public Students10() {
@@ -33,8 +40,7 @@ public class Students10 {
 		this.major = major;
 	}
 
-	@Id
-	@GeneratedValue
+
 	public int getSid() {
 		return sid;
 	}
@@ -75,10 +81,7 @@ public class Students10 {
 		this.major = major;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "ANN10_TEACH_STU", 
-	joinColumns = {@JoinColumn(name = "sid") }, 
-	inverseJoinColumns = { @JoinColumn(name = "tid") })
+
 	public Set<Teacher10> getTeach() {
 		return teach;
 	}
