@@ -3,7 +3,7 @@
 <% 
   request.setCharacterEncoding("utf-8");
 %>
-<jsp:useBean id="loginUser" class="com.po.Users" scope="page"/>
+<jsp:useBean id="loginUser" class="com.t01base.po.Users" scope="page"/>
 <jsp:useBean id="userDAO" class="com.dao.UsersDAO" scope="page"/>
 <jsp:setProperty property="*" name="loginUser"/>
 

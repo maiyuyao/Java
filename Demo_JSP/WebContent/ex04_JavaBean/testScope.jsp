@@ -1,9 +1,9 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
-<%@ page import="com.po.Users"%>
+<%@ page import="com.ex01base.po.Users"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":"
-			+ request.getServerPort() + path + "/";
+	+ request.getServerPort() + path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -28,7 +28,7 @@
 	<h1>Javabean Scope Test</h1>
 	<hr>
 	<!-- 此处修改 scope的值：application,session,request,page-->
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="session" />
+	<jsp:useBean id="myUsers" class="com.t01base.po.Users" scope="session" />
 
 	jsp:useBean 用户名：<jsp:getProperty name="myUsers" property="username" /><br>
 	jsp:useBean 密码：<jsp:getProperty name="myUsers" property="password" /><br>

@@ -27,7 +27,7 @@
 <body>
 
 	<!-- 此处修改 scope的值：application,session,request,page-->
-	<jsp:useBean id="myUsers" class="com.po.Users" scope="session" />
+	<jsp:useBean id="myUsers" class="com.t01base.po.Users" scope="session" />
 	<h4>setProperty动作元素</h4>
 	<hr>
 	根据表单自动匹配所有的属性

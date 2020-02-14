@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <%@ page import="com.po.Users" %>
+  <%@ page import="com.ex01base.po.Users" %>
     <% 
        Users user = new Users();
        user.setUsername("admin"); //设置用户名
